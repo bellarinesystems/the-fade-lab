@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Fade Lab — Geelong West's premier barbershop on Aberdeen St. Expert fades, cuts & grooming from Raj and Gary. Call (03) 5229 3311.">
+<title>The Fade Lab — Geelong West's Premier Barbershop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--blue-900:#0c2340;
+--blue-700:#14375e;
+--blue-600:#1a4a7a;
+--blue-500:#1e5a94;
+--blue-400:#2878b5;
+--blue-300:#5da3d9;
+--blue-100:#dbeaf7;
+--blue-50:#f0f6fc;
+--warm-grey-100:#f7f5f3;
+--warm-grey-200:#ece8e4;
+--warm-grey-300:#d9d3cc;
+--warm-grey-600:#7a7168;
+--white:#ffffff;
+--text-dark:#1a1a2e;
+--text-body:#3d3d50;
+--text-muted:#6b6b80;
+--accent-gold:#c8943e;
+--radius:12px;
+--radius-lg:20px;
+--shadow-sm:0 2px 8px rgba(12,35,64,0.06);
+--shadow-md:0 8px 30px rgba(12,35,64,0.1);
+--shadow-lg:0 16px 50px rgba(12,35,64,0.14);
+--transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text-body);line-height:1.7;overflow-x:hidden;background:var(--white)}
+h1,h2,h3,h4,h5,h6{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);line-height:1.25}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* ===== NAVBAR ===== */
+.navbar{
+position:sticky;top:0;z-index:1000;
+background:rgba(255,255,255,0.97);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(12,35,64,0.06);
+padding:0 24px;
+transition:box-shadow var(--transition);
+}
+.navbar.scrolled{box-shadow:var(--shadow-sm)}
+.nav-inner{
+max-width:1200px;margin:0 auto;
+display:flex;align-items:center;justify-content:space-between;
+height:72px;
+}
+.nav-logo{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:800;font-size:1.4rem;
+color:var(--blue-900);
+display:flex;align-items:center;gap:10px;
+}
+.nav-logo-icon{
+width:38px;height:38px;
+background:linear-gradient(135deg,var(--blue-500),var(--blue-900));
+border-radius:8px;
+display:flex;align-items:center;justify-content:center;
+}
+.nav-logo-icon svg{width:20px;height:20px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:0.9rem;font-weight:600;
+color:var(--text-body);
+position:relative;
+transition:color var(--transition);
+}
+.nav-links a::after{
+content:'';position:absolute;bottom:-4px;left:0;
+width:0;height:2px;
+background:var(--blue-500);
+transition:width var(--transition);
+}
+.nav-links a:hover{color:var(--blue-500)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+background:var(--blue-500);color:var(--white)!important;
+padding:10px 22px;border-radius:50px;
+font-size:0.85rem!important;
+transition:all var(--transition);
+}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--blue-700);transform:translateY(-1px)}
+.hamburger{
+display:none;background:none;border:none;cursor:pointer;
+width:48px;height:48px;
+flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.hamburger span{
+display:block;width:24px;height:2.5px;
+background:var(--blue-900);border-radius:2px;
+transition:all var(--transition);
+}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{
+display:none;
+position:absolute;top:72px;left:0;right:0;
+background:var(--white);
+border-bottom:1px solid var(--warm-grey-200);
+box-shadow:var(--shadow-md);
+padding:16px 24px 24px;
+}
+.mobile-menu.open{display:block}
+.mobile-menu a{
+display:block;padding:14px 0;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:600;font-size:1rem;
+color:var(--text-body);
+border-bottom:1px solid var(--warm-grey-100);
+}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu .nav-cta-mobile{
+display:inline-block;margin-top:12px;
+background:var(--blue-500);color:var(--white);
+padding:14px 28px;border-radius:50px;
+text-align:center;width:100%;
+}
+
+@media(max-width:768px){
+.nav-links{display:none}
+.hamburger{display:flex}
+}
+
+/* ===== HERO ===== */
+.hero{
+position:relative;
+min-height:92vh;
+display:flex;align-items:center;
+overflow:hidden;
+background:linear-gradient(160deg,var(--blue-900) 0%,var(--blue-700) 40%,var(--blue-500) 100%);
+}
+.hero-pattern{
+position:absolute;inset:0;
+opacity:0.08;
+}
+.hero-pattern svg{width:100%;height:100%}
+.hero-geo-1{
+position:absolute;top:-80px;right:-60px;
+width:500px;height:500px;
+border:3px solid rgba(255,255,255,0.08);
+border-radius:50%;
+}
+.hero-geo-2{
+position:absolute;bottom:-120px;left:-100px;
+width:600px;height:600px;
+border:2px solid rgba(255,255,255,0.05);
+border-radius:50%;
+}
+.hero-geo-3{
+position:absolute;top:30%;right:8%;
+width:120px;height:120px;
+background:linear-gradient(135deg,rgba(200,148,62,0.3),rgba(200,148,62,0.05));
+border-radius:var(--radius-lg);
+transform:rotate(45deg);
+}
+.hero-stripe{
+position:absolute;bottom:0;left:0;right:0;height:6px;
+background:linear-gradient(90deg,var(--accent-gold),var(--blue-300),var(--accent-gold));
+}
+.hero-inner{
+position:relative;z-index:2;
+max-width:1200px;margin:0 auto;
+padding:120px 24px 80px;
+display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+.hero-content{color:var(--white)}
+.hero-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.15);
+padding:8px 18px;border-radius:50px;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:0.8rem;font-weight:600;
+color:var(--blue-100);
+margin-bottom:24px;
+letter-spacing:0.5px;text-transform:uppercase;
+}
+.hero-badge i{color:var(--accent-gold)}
+.hero h1{
+font-size:clamp(2.2rem,5vw,3.8rem);
+font-weight:800;
+letter-spacing:-0.02em;
+margin-bottom:20px;
+color:var(--white);
+}
+.hero h1 span{
+background:linear-gradient(135deg,var(--accent-gold),#e8b960);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+background-clip:text;
+}
+.hero-sub{
+font-size:clamp(1rem,1.8vw,1.15rem);
+line-height:1.8;
+color:rgba(255,255,255,0.8);
+margin-bottom:36px;
+max-width:540px;
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn{
+display:inline-flex;align-items:center;gap:8px;
+padding:16px 32px;border-radius:50px;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:700;font-size:0.95rem;
+cursor:pointer;border:none;
+transition:all var(--transition);
+min-height:48px;
+}
+.btn-primary{
+background:var(--accent-gold);color:var(--blue-900);
+box-shadow:0 4px 20px rgba(200,148,62,0.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,148,62,0.45)}
+.btn-outline{
+background:transparent;color:var(--white);
+border:2px solid rgba(255,255,255,0.4);
+}
+.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.7)}
+.hero-visual{
+position:relative;
+display:flex;align-items:center;justify-content:center;
+}
+.hero-visual-shape{
+width:380px;height:380px;
+background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+border-radius:50%;
+border:2px solid rgba(255,255,255,0.08);
+display:flex;align-items:center;justify-content:center;
+position:relative;
+}
+.hero-visual-inner{
+width:280px;height:280px;
+background:linear-gradient(160deg,rgba(200,148,62,0.15),rgba(255,255,255,0.05));
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+flex-direction:column;gap:12px;
+}
+.hero-visual-inner svg{width:80px;height:80px;opacity:0.9}
+.hero-visual-text{
+font-family:'Plus Jakarta Sans',sans-serif;
+color:var(--white);font-weight:700;font-size:1.3rem;
+text-align:center;
+}
+.hero-visual-subtext{
+color:rgba(255,255,255,0.6);font-size:0.85rem;
+text-align:center;
+}
+.hero-float-card{
+position:absolute;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(12px);
+border-radius:var(--radius);
+padding:16px 20px;
+box-shadow:var(--shadow-md);
+}
+.hero-float-card.card-1{bottom:20px;left:-20px}
+.hero-float-card.card-2{top:20px;right:-10px}
+.hero-float-card .hfc-label{
+font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;
+color:var(--text-muted);font-weight:600;
+font-family:'Plus Jakarta Sans',sans-serif;
+}
+.hero-float-card .hfc-value{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:1.4rem;font-weight:800;color:var(--blue-900);
+}
+.hero-float-card .hfc-stars{color:var(--accent-gold);font-size:0.85rem}
+
+@media(max-width:768px){
+.hero-inner{grid-template-columns:1fr;text-align:centre;padding:100px 24px 60px}
+.hero-sub{margin-left:auto;margin-right:auto}
+.hero-btns{justify-content:center}
+.hero-visual{display:none}
+.hero h1{text-align:center}
+.hero-sub{text-align:center}
+.hero-badge{margin-left:auto;margin-right:auto}
+}
+@media(max-width:480px){
+.hero-btns{flex-direction:column;align-items:stretch}
+.btn{justify-content:center}
+}
+
+/* ===== SECTIONS ===== */
+.section{padding:100px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{
+display:inline-flex;align-items:center;gap:8px;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:0.78rem;font-weight:700;
+text-transform:uppercase;letter-spacing:1.5px;
+color:var(--blue-500);
+margin-bottom:12px;
+}
+.section-label i{font-size:0.6rem}
+.section-title{
+font-size:clamp(1.8rem,3.5vw,2.6rem);
+font-weight:800;
+letter-spacing:-0.02em;
+margin-bottom:16px;
+}
+.section-desc{
+font-size:1.05rem;
+color:var(--text-muted);
+max-width:600px;
+margin-bottom:48px;
+}
+.section-desc.centered{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ===== ABOUT ===== */
+.about{background:var(--white)}
+.about-grid{
+display:grid;grid-template-columns:1.2fr 0.8fr;gap:60px;align-items:start;
+}
+.about-text{
+font-size:1.05rem;line-height:1.9;
+color:var(--text-body);
+}
+.about-text p{margin-bottom:20px}
+.about-divider{
+width:60px;height:4px;
+background:linear-gradient(90deg,var(--blue-500),var(--accent-gold));
+border-radius:4px;
+margin:28px 0;
+}
+.stats-grid{display:flex;flex-direction:column;gap:20px}
+.stat-card{
+background:var(--blue-50);
+border:1px solid var(--blue-100);
+border-radius:var(--radius-lg);
+padding:32px;
+text-align:center;
+transition:all var(--transition);
+}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.stat-number{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:2.6rem;font-weight:800;
+background:linear-gradient(135deg,var(--blue-600),var(--blue-400));
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+background-clip:text;
+}
+.stat-label{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:0.85rem;font-weight:600;
+color:var(--text-muted);
+text-transform:uppercase;letter-spacing:1px;
+margin-top:4px;
+}
+
+@media(max-width:768px){
+.about-grid{grid-template-columns:1fr;gap:40px}
+.stats-grid{flex-direction:row;flex-wrap:wrap;gap:16px}
+.stat-card{flex:1;min-width:140px}
+}
+
+/* ===== SERVICES ===== */
+.services{background:var(--warm-grey-100)}
+.services-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.service-card{
+background:var(--white);
+border-radius:var(--radius-lg);
+padding:36px 28px;
+border:1px solid var(--warm-grey-200);
+transition:all var(--transition);
+position:relative;
+overflow:hidden;
+}
+.service-card::before{
+content:'';position:absolute;top:0;left:0;right:0;height:4px;
+background:linear-gradient(90deg,var(--blue-500),var(--blue-300));
+transform:scaleX(0);transform-origin:left;
+transition:transform var(--transition);
+}
+.service-card:hover{
+transform:translateY(-6px);
+box-shadow:var(--shadow-lg);
+border-color:transparent;
+}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{
+width:56px;height:56px;
+background:linear-gradient(135deg,var(--blue-50),var(--blue-100));
+border-radius:var(--radius);
+display:flex;align-items:center;justify-content:center;
+margin-bottom:20px;
+color:var(--blue-500);font-size:1.2rem;
+}
+.service-card h3{
+font-size:1.15rem;font-weight:700;
+margin-bottom:12px;
+}
+.service-card p{
+font-size:0.92rem;color:var(--text-muted);line-height:1.7;
+}
+
+@media(max-width:768px){
+.services-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+.services-grid{grid-template-columns:1fr}
+}
+
+/* ===== SELLING POINTS ===== */
+.selling{background:var(--white)}
+.selling-grid{
+display:grid;grid-template-columns:repeat(2,1fr);gap:40px;
+}
+.selling-item{
+display:flex;gap:20px;
+padding:32px;
+border-radius:var(--radius-lg);
+transition:all var(--transition);
+}
+.selling-item:hover{background:var(--blue-50)}
+.selling-icon{
+width:60px;height:60px;min-width:60px;
+background:linear-gradient(135deg,var(--blue-900),var(--blue-600));
+border-radius:var(--radius);
+display:flex;align-items:center;justify-content:center;
+color:var(--white);font-size:1.1rem;
+}
+.selling-item h3{
+font-size:1.1rem;font-weight:700;
+margin-bottom:8px;
+}
+.selling-item p{
+font-size:0.92rem;color:var(--text-muted);line-height:1.7;
+}
+
+@media(max-width:768px){
+.selling-grid{grid-template-columns:1fr;gap:16px}
+.selling-item{padding:24px 16px}
+}
+
+/* ===== PROCESS ===== */
+.process{background:var(--blue-900);color:var(--white)}
+.process .section-label{color:var(--accent-gold)}
+.process .section-title{color:var(--white)}
+.process .section-desc{color:rgba(255,255,255,0.6)}
+.process-steps{
+display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+position:relative;
+}
+.process-steps::before{
+content:'';
+position:absolute;top:44px;
+left:calc(12.5%);right:calc(12.5%);
+height:2px;
+background:linear-gradient(90deg,var(--accent-gold),var(--blue-300),var(--accent-gold));
+opacity:0.3;
+}
+.step{
+text-align:center;position:relative;z-index:2;
+}
+.step-number{
+width:88px;height:88px;
+margin:0 auto 24px;
+background:linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0.03));
+border:2px solid rgba(255,255,255,0.12);
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:1.8rem;font-weight:800;
+color:var(--accent-gold);
+}
+.step h3{
+font-size:1.05rem;font-weight:700;
+color:var(--white);
+margin-bottom:10px;
+}
+.step p{
+font-size:0.88rem;line-height:1.7;
+color:rgba(255,255,255,0.55);
+}
+
+@media(max-width:768px){
+.process-steps{grid-template-columns:1fr 1fr;gap:40px}
+.process-steps::before{display:none}
+}
+@media(max-width:480px){
+.process-steps{grid-template-columns:1fr}
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials{
+background:linear-gradient(170deg,var(--blue-50),var(--warm-grey-100));
+position:relative;
+overflow:hidden;
+}
+.testimonials-deco{
+position:absolute;top:-60px;right:-60px;
+width:300px;height:300px;
+border:2px solid var(--blue-100);
+border-radius:50%;
+opacity:0.4;
+}
+.testimonials-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+position:relative;z-index:2;
+}
+.testimonial-card{
+background:var(--white);
+border-radius:var(--radius-lg);
+padding:32px;
+border:1px solid var(--warm-grey-200);
+transition:all var(--transition);
+display:flex;flex-direction:column;
+}
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.tc-stars{
+color:var(--accent-gold);font-size:1rem;
+margin-bottom:16px;letter-spacing:2px;
+}
+.tc-quote{
+font-size:0.95rem;line-height:1.8;
+color:var(--text-body);
+flex:1;
+margin-bottom:20px;
+font-style:italic;
+}
+.tc-author{
+display:flex;align-items:center;gap:12px;
+border-top:1px solid var(--warm-grey-200);
+padding-top:16px;
+}
+.tc-avatar{
+width:44px;height:44px;
+background:linear-gradient(135deg,var(--blue-500),var(--blue-300));
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+color:var(--white);
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:700;font-size:0.9rem;
+}
+.tc-name{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:700;font-size:0.9rem;
+color:var(--text-dark);
+}
+.tc-verified{font-size:0.75rem;color:var(--text-muted)}
+
+@media(max-width:768px){
+.testimonials-grid{grid-template-columns:1fr}
+}
+
+/* ===== FAQ ===== */
+.faq{background:var(--white)}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{
+border:1px solid var(--warm-grey-200);
+border-radius:var(--radius);
+margin-bottom:12px;
+overflow:hidden;
+transition:all var(--transition);
+}
+.faq-item:hover{border-color:var(--blue-300)}
+.faq-question{
+display:flex;align-items:center;justify-content:space-between;gap:16px;
+padding:22px 24px;
+cursor:pointer;
+background:var(--white);
+border:none;width:100%;text-align:left;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:1rem;font-weight:700;
+color:var(--text-dark);
+transition:all var(--transition);
+min-height:48px;
+}
+.faq-question:hover{color:var(--blue-500)}
+.faq-icon{
+width:32px;height:32px;min-width:32px;
+background:var(--blue-50);
+border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+color:var(--blue-500);font-size:0.8rem;
+transition:all var(--transition);
+}
+.faq-item.active .faq-icon{
+background:var(--blue-500);color:var(--white);
+transform:rotate(45deg);
+}
+.faq-answer{
+max-height:0;overflow:hidden;
+transition:max-height 0.4s ease, padding 0.3s ease;
+}
+.faq-item.active .faq-answer{
+max-height:400px;
+}
+.faq-answer-inner{
+padding:0 24px 22px;
+font-size:0.95rem;line-height:1.8;
+color:var(--text-muted);
+}
+
+/* ===== HOURS & LOCATION ===== */
+.location{background:var(--warm-grey-100)}
+.location-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
+}
+.hours-card{
+background:var(--white);
+border-radius:var(--radius-lg);
+padding:40px;
+border:1px solid var(--warm-grey-200);
+}
+.hours-card h3{
+font-size:1.3rem;font-weight:700;margin-bottom:24px;
+}
+.hours-row{
+display:flex;justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid var(--warm-grey-100);
+font-size:0.93rem;
+}
+.hours-row:last-child{border-bottom:none}
+.hours-day{font-weight:600;color:var(--text-dark)}
+.hours-time{color:var(--text-muted)}
+.hours-row.closed .hours-time{color:#c0392b;font-weight:600}
+.map-wrapper{
+border-radius:var(--radius-lg);
+overflow:hidden;
+border:1px solid var(--warm-grey-200);
+aspect-ratio:4/3;
+}
+.map-wrapper iframe{width:100%;height:100%;border:0}
+
+@media(max-width:768px){
+.location-grid{grid-template-columns:1fr;gap:32px}
+.map-wrapper{aspect-ratio:16/10}
+}
+
+/* ===== CONTACT ===== */
+.contact{
+background:linear-gradient(160deg,var(--blue-900),var(--blue-700));
+color:var(--white);
+position:relative;overflow:hidden;
+}
+.contact-deco{
+position:absolute;bottom:-100px;right:-100px;
+width:400px;height:400px;
+border:2px solid rgba(255,255,255,0.05);
+border-radius:50%;
+}
+.contact-inner{
+position:relative;z-index:2;
+display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;
+}
+.contact .section-label{color:var(--accent-gold)}
+.contact .section-title{color:var(--white)}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-row{display:flex;align-items:flex-start;gap:16px}
+.contact-row-icon{
+width:48px;height:48px;min-width:48px;
+background:rgba(255,255,255,0.1);
+border-radius:var(--radius);
+display:flex;align-items:center;justify-content:center;
+color:var(--accent-gold);font-size:1rem;
+}
+.contact-row-text h4{
+font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:4px;
+}
+.contact-row-text p,.contact-row-text a{
+font-size:0.9rem;color:rgba(255,255,255,0.65);
+}
+.contact-row-text a:hover{color:var(--accent-gold)}
+.click-to-call{
+display:inline-flex;align-items:center;gap:12px;
+background:var(--accent-gold);color:var(--blue-900);
+padding:20px 40px;border-radius:50px;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:800;font-size:1.15rem;
+border:none;cursor:pointer;
+transition:all var(--transition);
+margin-top:16px;
+min-height:48px;
+box-shadow:0 8px 30px rgba(200,148,62,0.3);
+}
+.click-to-call:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(200,148,62,0.45)}
+.contact-form{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:var(--radius-lg);
+padding:36px;
+}
+.contact-form h3{
+font-size:1.2rem;font-weight:700;color:var(--white);margin-bottom:24px;
+}
+.form-group{margin-bottom:18px}
+.form-group label{
+display:block;font-size:0.82rem;font-weight:600;
+color:rgba(255,255,255,0.7);margin-bottom:6px;
+text-transform:uppercase;letter-spacing:0.5px;
+font-family:'Plus Jakarta Sans',sans-serif;
+}
+.form-group input,.form-group textarea{
+width:100%;padding:14px 18px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:var(--radius);
+color:var(--white);
+font-family:'Inter',sans-serif;font-size:0.95rem;
+transition:all var(--transition);
+}
+.form-group input:focus,.form-group textarea:focus{
+outline:none;
+border-color:var(--accent-gold);
+background:rgba(255,255,255,0.12);
+}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.3)}
+.form-submit{
+background:var(--white);color:var(--blue-900);
+padding:16px 36px;border-radius:50px;
+font-family:'Plus Jakarta Sans',sans-serif;
+font-weight:700;font-size:0.95rem;
+border:none;cursor:pointer;
+transition:all var(--transition);
+min-height:48px;
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+
+@media(max-width:768px){
+.contact-inner{grid-template-columns:1fr;gap:40px}
+}
+
+/* ===== FOOTER ===== */
+.footer{
+background:var(--blue-900);
+background:linear-gradient(180deg,#081a30,#060f1e);
+color:rgba(255,255,255,0.6);
+padding:80px 24px 32px;
+}
+.footer-inner{
+max-width:1200px;margin:0 auto;
+display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;
+}
+.footer-brand .nav-logo{margin-bottom:16px}
+.footer-brand .nav-logo-icon{background:linear-gradient(135deg,var(--accent-gold),#e8b960)}
+.footer-brand p{font-size:0.9rem;line-height:1.8;max-width:320px}
+.footer h4{
+font-family:'Plus Jakarta Sans',sans-serif;
+font-size:0.85rem;font-weight:700;
+text-transform:uppercase;letter-spacing:1.5px;
+color:var(--white);
+margin-bottom:20px;
+}
+.footer-links a{
+display:block;padding:6px 0;
+font-size:0.9rem;
+transition:color var(--transition);
+}
+.footer-links a:hover{color:var(--accent-gold)}
+.footer-contact-item{
+display:flex;align-items:center;gap:10px;
+margin-bottom:12px;font-size:0.9rem;
+}
+.footer-contact-item i{color:var(--accent-gold);width:16px;text-align:center}
+.footer-bottom{
+max-width:1200px;margin:48px auto 0;
+padding-top:24px;
+border-top:1px solid rgba(255,255,255,0.08);
+display:flex;justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:12px;
+font-size:0.82rem;
+}
+
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr;gap:32px}
+.footer-bottom{flex-direction:column;text-align:center}
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+from{transform:translateY(20px)}
+to{transform:translateY(0)}
+}
+.hero-content{animation:fadeUp 0.8s ease both}
+.hero-visual{animation:fadeUp 0.8s 0.2s ease both}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+.hero-float-card.card-1{animation:float 4s ease-in-out infinite}
+.hero-float-card.card-2{animation:float 4s 1s ease-in-out infinite}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+<a href="#" class="nav-logo">
+<div class="nav-logo-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+<path d="M5 3v18M12 3v18M19 3v18M3 8h6M10 12h6M17 8h4"/>
+</svg>
+</div>
+The Fade Lab
+</a>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#process">How It Works</a>
+<a href="#testimonials">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="tel:0352293311" class="nav-cta"><i class="fas fa-phone"></i> Call Now</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#process">How It Works</a>
+<a href="#testimonials">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+<a href="tel:0352293311" class="nav-cta-mobile"><i class="fas fa-phone"></i> Call (03) 5229 3311</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+<div class="hero-pattern">
+<svg width="100%" height="100%">
+<defs>
+<pattern id="heroGrid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+<rect width="60" height="60" fill="none" stroke="white" stroke-width="0.5"/>
+</pattern>
+</defs>
+<rect width="100%" height="100%" fill="url(#heroGrid)"/>
+</svg>
+</div>
+<div class="hero-geo-1"></div>
+<div class="hero-geo-2"></div>
+<div class="hero-geo-3"></div>
+<div class="hero-stripe"></div>
+<div class="hero-inner">
+<div class="hero-content">
+<div class="hero-badge"><i class="fas fa-scissors"></i> Premium Barbershop — Geelong West</div>
+<h1>Geelong West's Best <span>Fade</span> Starts Here</h1>
+<p class="hero-sub">Precision cuts and genuine craftsmanship from Raj and Gary — the barbers blokes in Geelong West refuse to leave. Walk into The Fade Lab on Aberdeen Street and walk out looking your absolute best.</p>
+<div class="hero-btns">
+<a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Your Cut Today</a>
+<a href="tel:0352293311" class="btn btn-outline"><i class="fas fa-phone"></i> Call (03) 5229 3311</a>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-visual-shape">
+<div class="hero-visual-inner">
+<svg viewBox="0 0 100 100" fill="none">
+<circle cx="50" cy="35" r="18" stroke="white" stroke-width="2"/>
+<path d="M25 85 C25 60 75 60 75 85" stroke="white" stroke-width="2" fill="none"/>
+<path d="M62 25 L72 15 M65 30 L78 22 M64 35 L76 32" stroke="rgba(200,148,62,0.8)" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+<span class="hero-visual-text">Est. Geelong West</span>
+<span class="hero-visual-subtext">Aberdeen Street</span>
+</div>
+</div>
+<div class="hero-float-card card-1">
+<div class="hfc-label">Client Rating</div>
+<div class="hfc-value">5.0 <span class="hfc-stars">★★★★★</span></div>
+</div>
+<div class="hero-float-card card-2">
+<div class="hfc-label">Master Barbers</div>
+<div class="hfc-value">Raj & Gary</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+<div class="section-inner">
+<div class="about-grid">
+<div>
+<div class="section-label"><i class="fas fa-circle"></i> Who We Are</div>
+<h2 class="section-title">More Than a Haircut — It's the Full Experience</h2>
+<div class="about-divider"></div>
+<div class="about-text">
+<p>The Fade Lab is what happens when proper skill meets genuine passion. Run by Raj and Gary out of our Aberdeen Street shop in Geelong West, we've built a reputation as the barbershop blokes and their families won't leave — and we don't take that lightly.</p>
+<p>From first-timers to regulars who've been in our chairs for years, every client gets the same thing: a comfortable experience, a proper chat, and a cut that's absolutely dialled in. Whether it's your young fella's first trim or your weekly shape-up, we treat every head like it matters — because it does.</p>
+</div>
+</div>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-number">5★</div>
+<div class="stat-label">Client Rating</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">1000+</div>
+<div class="stat-label">Happy Clients</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">2</div>
+<div class="stat-label">Master Barbers</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label" style="justify-content:center"><i class="fas fa-circle"></i> What We Offer</div>
+<h2 class="section-title" style="text-align:center">Services Tailored to You</h2>
+<p class="section-desc centered">Every service at The Fade Lab is delivered with precision, care, and proper attention to detail.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Signature Fades</h3>
+<p>Our namesake service and the one we're known for across Geelong. From skin fades to mid and high tapers, Raj and Gary blend with surgical precision every single time.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Classic Men's Cuts</h3>
+<p>Not every bloke wants a fade, and that's more than fine. We handle everything from textured crops to slick business cuts — whatever suits your style and your lifestyle.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Kids' Haircuts</h3>
+<p>We've got young regulars like Henry who genuinely look forward to coming in. Our patient, relaxed approach means your little one will actually enjoy the experience — and you'll love the result.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Beard Shaping & Grooming</h3>
+<p>A great haircut deserves a beard that matches. We'll sculpt, trim, and tidy your facial hair so everything works together properly.</p>
+</div>
+<div class="service-card">
+<div class="service-icon"><i class="fas fa-star"></i></div>
+<h3>Hot Towel Finish</h3>
+<p>Every visit at The Fade Lab feels like more than just a quick chop. Our hot towel finish is the detail that turns a haircut into something you genuinely look forward to.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SELLING POINTS -->
+<section class="section selling" id="why-us">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label" style="justify-content:center"><i class="fas fa-circle"></i> Why Choose Us</div>
+<h2 class="section-title" style="text-align:center">What Sets The Fade Lab Apart</h2>
+</div>
+<div class="selling-grid">
+<div class="selling-item">
+<div class="selling-icon"><i class="fas fa-scissors"></i></div>
+<div>
+<h3>Proper Craftsmanship, Every Chair</h3>
+<p>Raj and Gary aren't just barbers — they're craftsmen who've honed their skills over years of dedicated practice. Clients regularly tell us their cuts at The Fade Lab are the best they've ever had, full stop.</p>
+</div>
+</div>
+<div class="selling-item">
+<div class="selling-icon"><i class="fas fa-couch"></i></div>
+<div>
+<h3>A Shop That Feels Like Home</h3>
+<p>From the moment you walk through our door on Aberdeen Street, you'll feel comfortable and looked after. We've created a space where you can genuinely relax and enjoy the experience.</p>
+</div>
+</div>
+<div class="selling-item">
+<div class="selling-icon"><i class="fas fa-heart"></i></div>
+<div>
+<h3>Loyal Clients Who Won't Go Elsewhere</h3>
+<p>Our regulars don't just come back — they bring their partners, their kids, and their mates. When families drive past a dozen other barbers to sit in our chair, that says everything.</p>
+</div>
+</div>
+<div class="selling-item">
+<div class="selling-icon"><i class="fas fa-location-dot"></i></div>
+<div>
+<h3>Right Here in Geelong West</h3>
+<p>We're proudly local, sitting right on Aberdeen Street in the heart of Geelong West. No need to head into the city — world-class barbering is right in your neighbourhood.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:56px">
+<div class="section-label" style="justify-content:center"><i class="fas fa-circle"></i> How It Works</div>
+<h2 class="section-title">Four Simple Steps to Your Best Cut</h2>
+<p class="section-desc centered">No fuss, no drama — just a brilliant experience from start to finish.</p>
+</div>
+<div class="process-steps">
+<div class="step">
+<div class="step-number">1</div>
+<h3>Walk In or Call Ahead</h3>
+<p>Give us a ring on (03) 5229 3311 to book your spot, or just pop into the shop on Aberdeen Street when it suits you.</p>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<h3>Chat About What You Want</h3>
+<p>We'll have a proper conversation about your style, your hair type, and what you're after — no rushing, no assumptions.</p>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<h3>Sit Back and Enjoy the Cut</h3>
+<p>Relax in the chair while Raj or Gary work their magic with the precision and attention to detail we're known for.</p>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<h3>Walk Out Looking Sharp</h3>
+<p>Leave The Fade Lab feeling confident, freshly styled, and already looking forward to your next visit.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="testimonials">
+<div class="testimonials-deco"></div>
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label" style="justify-content:center"><i class="fas fa-circle"></i> Testimonials</div>
+<h2 class="section-title">Don't Take Our Word for It — Hear From the Regulars</h2>
+</div>
+<div class="testimonials-grid">
+<div class="testimonial-card">
+<div class="tc-stars">★★★★★</div>
+<p class="tc-quote">"The Fade Lab would have to be one of the best Barbershops I have ever been to (if not THE best in my travels, Raj is a true professional). Raj and Gary are absolute legends, very skilled and will do t..."</p>
+<div class="tc-author">
+<div class="tc-avatar">DM</div>
+<div>
+<div class="tc-name">David M</div>
+<div class="tc-verified"><i class="fas fa-check-circle"></i> Verified Client</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="tc-stars">★★★★★</div>
+<p class="tc-quote">"Absolutely loved my experience here! From the moment I walked in, I felt comfortable and well looked after. The staff are friendly, skilled, and clearly passionate about what they do. My hair has neve..."</p>
+<div class="tc-author">
+<div class="tc-avatar">US</div>
+<div>
+<div class="tc-name">uma shankar</div>
+<div class="tc-verified"><i class="fas fa-check-circle"></i> Verified Client</div>
+</div>
+</div>
+</div>
+<div class="testimonial-card">
+<div class="tc-stars">★★★★★</div>
+<p class="tc-quote">"My son Henry and partner Anthony have been having their hair cut by Raj at The Fade Lab for a few years now. We won't go anywhere else!!! It's always such a wonderful experience. Henry especially love..."</p>
+<div class="tc-author">
+<div class="tc-avatar">JB</div>
+<div>
+<div class="tc-name">Jaime Bell</div>
+<div class="tc-verified"><i class="fas fa-check-circle"></i> Verified Client</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label" style="justify-content:center"><i class="fas fa-circle"></i> FAQ</div>
+<h2 class="section-title">Frequently Asked Questions</h2>
+</div>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Do I need to book an appointment or can I walk in?
+<span class="faq-icon"><i class="fas fa-plus"></i></span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-inner">We welcome both walk-ins and bookings. If you want to guarantee your spot — especially on weekends — give us a call on (03) 5229 3311. Walk-ins are always welcome when we have availability.</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Is The Fade Lab good for kids' haircuts?
+<span class="faq-icon"><i class="fas fa-plus"></i></span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-inner">Absolutely. We've got young regulars who genuinely enjoy coming in, which says a lot. Raj and Gary are patient, friendly, and brilliant at making kids feel comfortable in the chair. It's a proper experience the whole family can enjoy.</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+Where exactly are you located in Geelong West?
+<span class="faq-icon"><i class="fas fa-plus"></i></span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-inner">You'll find us at 62A Aberdeen Street, Geelong West. We're easy to spot and there's street parking available nearby. If you're coming from the Geelong CBD, we're just a few minutes' drive west.</div>
+</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" aria-expanded="false">
+What styles do you specialise in?
+<span class="faq-icon"><i class="fas fa-plus"></i></span>
+</button>
+<div class="faq-answer">
+<div class="faq-answer-inner">While we're known for our fades — hence the name — we handle everything from classic scissor cuts to modern textured styles and beard grooming. Whatever your style, we'll tailor it to suit your face shape, hair type, and personal preference.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="section location" id="location">
+<div class="section-inner">
+<div style="text-align:center;margin-bottom:48px">
+<div class="section-label" style="justify-content:center"><i class="fas fa-circle"></i> Visit Us</div>
+<h2 class="section-title">Hours & Location</h2>
+</div>
+<div class="location-grid">
+<div class="hours-card">
+<h3><i class="fas fa-clock" style="color:var(--blue-500);margin-right:8px"></i> Opening Hours</h3>
+<div class="hours-row">
+<span class="hours-day">Monday</span>
+<span class="hours-time">9:00 AM – 7:00 PM</span>
+</div>
+<div class="hours-row closed">
+<span class="hours-day">Tuesday</span>
+<span class="hours-time">Closed</span>
+</div>
+<div class="hours-row">
+<span class="hours-day">Wednesday</span>
+<span class="hours-time">9:00 AM – 7:00 PM</span>
+</div>
+<div class="hours-row">
+<span class="hours-day">Thursday</span>
+<span class="hours-time">9:00 AM – 7:00 PM</span>
+</div>
+<div class="hours-row">
+<span class="hours-day">Friday</span>
+<span class="hours-time">9:00 AM – 7:00 PM</span>
+</div>
+<div class="hours-row">
+<span class="hours-day">Saturday</span>
+<span class="hours-time">9:00 AM – 5:00 PM</span>
+</div>
+<div class="hours-row">
+<span class="hours-day">Sunday</span>
+<span class="hours-time">10:00 AM – 4:00 PM</span>
+</div>
+</div>
+<div class="map-wrapper">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.5!2d144.345!3d-38.152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d2a51f6c4d0c0a1%3A0x0!2s62A+Aberdeen+St%2C+Geelong+West+VIC+3218!5e0!3m2!1sen!2sau!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+<div class="contact-deco"></div>
+<div class="section-inner">
+<div class="contact-inner">
+<div>
+<div class="section-label"><i class="fas fa-circle"></i> Get in Touch</div>
+<h2 class="section-title">Ready for Your Best Cut?</h2>
+<div class="contact-info">
+<div class="contact-row">
+<div class="contact-row-icon"><i class="fas fa-location-dot"></i></div>
+<div class="contact-row-text">
+<h4>Address</h4>
+<p>62A Aberdeen St, Geelong West VIC 3218, Australia</p>
+</div>
+</div>
+<div class="contact-row">
+<div class="contact-row-icon"><i class="fas fa-phone"></i></div>
+<div class="contact-row-text">
+<h4>Phone</h4>
+<a href="tel:0352293311">(03) 5229 3311</a>
+</div>
+</div>
+<div class="contact-row">
+<div class="contact-row-icon"><i class="fas fa-clock"></i></div>
+<div class="contact-row-text">
+<h4>Hours</h4>
+<p>Mon, Wed–Fri: 9am–7pm · Sat: 9am–5pm · Sun: 10am–4pm</p>
+</div>
+</div>
+</div>
+<a href="tel:0352293311" class="click-to-call">
+<i class="fas fa-phone"></i> Call (03) 5229 3311
+</a>
+</div>
+<div class="contact-form">
+<h3>Send Us a Message</h3>
+<form action="mailto:info@thefadelab.com.au" method="post" enctype="text/plain">
+<div class="form-group">
+<label for="name">Your Name</label>
+<input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
+</div>
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="e.g. john@example.com" required>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="e.g. 0400 000 000">
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell us what you're after..."></textarea>
+</div>
+<button type="submit" class="form-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<div class="nav-logo" style="color:var(--white)">
+<div class="nav-logo-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+<path d="M5 3v18M12 3v18M19 3v18M3 8h6M10 12h6M17 8h4"/>
+</svg>
+</div>
+The Fade Lab
+</div>
+<p>Precision cuts and genuine craftsmanship from Raj and Gary — Geelong West's premier barbershop on Aberdeen Street.</p>
+</div>
+<div>
+<h4>Quick Links</h4>
+<div class="footer-links">
+<a href="#about">About Us</a>
+<a href="#services">Services</a>
+<a href="#process">How It Works</a>
+<a href="#testimonials">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+<div>
+<h4>Contact Us</h4>
+<div class="footer-contact-item">
+<i class="fas fa-location-dot"></i>
+62A Aberdeen St, Geelong West VIC 3218
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<a href="tel:0352293311">(03) 5229 3311</a>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+Mon, Wed–Fri: 9am–7pm
+</div>
+<div class="footer-contact-item" style="padding-left:26px">
+Sat: 9am–5pm · Sun: 10am–4pm
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<span>&copy; 2026 The Fade Lab. All rights reserved.</span>
+<span>62A Aberdeen St, Geelong West VIC 3218, Australia</span>
+</div>
+</footer>
+
+<script>
+// Mobile menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', function() {
+this.classList.toggle('active');
+mobileMenu.classList.toggle('open');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+link.addEventListener('click', function() {
+hamburger.classList.remove('active');
+mobileMenu.classList.remove('open');
+});
+});
+
+// Navbar scroll shadow
+window.addEventListener('scroll', function() {
+const navbar = document.getElementById('navbar');
+if (window.scrollY > 20) {
+navbar.classList.add('scrolled');
+} else {
+navbar.classList.remove('scrolled');
+}
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+btn.addEventListener('click', function() {
+const item = this.parentElement;
+const isActive = item.classList.contains('active');
+// Close all others
+document.querySelectorAll('.faq-item').forEach(function(el) {
+el.classList.remove('active');
+el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+});
+// Toggle current
+if (!isActive) {
+item.classList.add('active');
+this.setAttribute('aria-expanded', 'true');
+}
+});
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+anchor.addEventListener('click', function(e) {
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+e.preventDefault();
+const navHeight = document.getElementById('navbar').offsetHeight;
+const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+window.scrollTo({ top: targetPos, behavior: 'smooth' });
+}
+});
+});
+</script>
+</body>
+</html>
